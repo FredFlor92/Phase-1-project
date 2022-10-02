@@ -162,3 +162,9 @@ const renderLogNewEntryForm = () => {
     mainDiv().appendChild(h1);
     mainDiv().appendChild(form);
 }
+
+//render meals 
+const renderFoodsStepsItems = () => {
+    return foodStepsItems.map(item => foodStepsItemsTemplate(item))
+}
+
