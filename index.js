@@ -82,3 +82,83 @@ const renderFoodsStepLogPage = async () => {
     mainDiv().appendChild(h1);
     mainDiv().appendChild(table);
 }
+
+//RenderLognewentryform
+const renderLogNewEntryForm = () => {
+    mainDiv().innerHTML = '';
+    //
+    const h1 = document.createElement('h1');
+    const form = document.createElement('form');
+    const dateDiv = document.createElement('div');
+    const dateInput = document.createElement('input');
+    const dateLabel = document.createElement('label');
+    const breakfastDiv = document.createElement('div');
+    const breakfastInput = document.createElement('input');
+    const breakfastLabel = document.createElement('label');
+    const lunchDiv = document.createElement('div');
+    const lunchInput = document.createElement('input');
+    const lunchLabel = document.createElement('label');
+    const dinnerDiv = document.createElement('div');
+    const dinnerInput = document.createElement('input');
+    const dinnerLabel = document.createElement('label');
+    const stepsDiv = document.createElement('div');
+    const stepsInput = document.createElement('input');
+    const stepsLabel = document.createElement('label');
+    const submitButton = document.createElement('input');
+  
+    h1.className = 'center-align';
+    dateDiv.className = 'input-field';
+    breakfastDiv.className = 'input-field';
+    lunchDiv.className = 'input-field';
+    dinnerDiv.className = 'input-field';
+    stepsDiv.className = 'input-field';
+    submitButton.className = 'waves-effect waves-light btn';
+  
+    dateInput.setAttribute('id', 'date');
+    dateInput.setAttribute('type', 'text');
+    dateLabel.setAttribute('for', 'date');
+    breakfastInput.setAttribute('id', 'breakfast');
+    breakfastInput.setAttribute('type', 'text');
+    breakfastLabel.setAttribute('for', 'breakfast');
+    lunchInput.setAttribute('id', 'lunch');
+    lunchInput.setAttribute('type', 'text');
+    lunchLabel.setAttribute('for','lunch');
+    dinnerInput.setAttribute('id', 'dinner');
+    dinnerInput.setAttribute('type', 'text');
+    dinnerLabel.setAttribute('for','dinner');
+    stepsInput.setAttribute('id', 'steps');
+    stepsInput.setAttribute('type', 'text');
+    stepsLabel.setAttribute('for','steps');
+    submitButton.setAttribute('type', 'submit');
+    submitButton.setAttribute('value', 'Submit');
+  
+    h1.innerText = 'LOG Items for the Day';
+    dateLabel.innerText = 'Date';
+    breakfastLabel.innerText = 'Breakfast';
+    lunchLabel.innerText = "Lunch";
+    dinnerLabel.innerText = "Dinner";
+    stepsLabel.innerText = "Steps";
+  
+    dateDiv.appendChild(dateInput);
+    dateDiv.appendChild(dateLabel);
+    breakfastDiv.appendChild(breakfastInput);
+    breakfastDiv.appendChild(breakfastLabel);
+    lunchDiv.appendChild(lunchInput);
+    lunchDiv.appendChild(lunchLabel);
+    dinnerDiv.appendChild(dinnerInput);
+    dinnerDiv.appendChild(dinnerLabel);
+    stepsDiv.appendChild(stepsInput);
+    stepsDiv.appendChild(stepsLabel);
+  
+    form.appendChild(dateDiv);
+    form.appendChild(breakfastDiv);
+    form.appendChild(lunchDiv);
+    form.appendChild(dinnerDiv);
+    form.appendChild(stepsDiv);
+    form.appendChild(submitButton);
+  
+    form.addEventListener('submit', submitFormEvent);
+  
+    mainDiv().appendChild(h1);
+    mainDiv().appendChild(form);
+}
