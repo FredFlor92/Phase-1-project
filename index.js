@@ -168,3 +168,58 @@ const renderFoodsStepsItems = () => {
     return foodStepsItems.map(item => foodStepsItemsTemplate(item))
 }
 
+//Events 
+
+const loadFoodsStepsFromDb = async () => {
+    const resp = await fetch(**********Fill IN***********)
+    const data = await resp.json();
+    foodStepsItems = data;
+}
+
+const homePageLinkEvent = () => {
+    homePageLink().addEventListener('click', (e) => { 
+        renderHomePage();
+    })
+}
+
+const loadFoodsStepsLinkEvent = () => {
+    loggedFoodStepsLink().addEventListener('click', (e) => {
+        renderFoodsStepLogPage();
+    })
+}
+
+const submitFormEvent = e => {
+
+    console.log('date', dateInput().value);
+    console.log('breakfast', breakfastInput().value);
+    console.log('lunch', lunchInput().value);
+    console.log('dinner', dinnerInput().value);
+    console.log('steps', stepsInput().value);
+  
+    fetch('http://localhost:3000/foodsAndSteps', {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        date: dateInput().value,
+        breakfast: breakfastInput().value,
+        lunch: lunchInput().value,
+        dinner:  dinnerInput().value,
+        steps: stepsInput().value
+      })
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      console.log(data)
+      renderFoodsStepsLogPage();
+    })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderHomePage();
+    homePageLinkEvent();
+    loggedFoodStepsLinkEvent();
+    logNewEntryLinkEvent();
+})
