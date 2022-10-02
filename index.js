@@ -45,3 +45,40 @@ const renderHomePage = () => {
     return renderLogNewEntryForm();
 }
 
+//Render meals page
+
+const renderFoodsStepLogPage = async () => {
+    await loadFoodsStepsFromDb();
+    mainDiv().innerHTML = '';
+    const h1 = document.createElement('h1');
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const tr = document.createElement('tr');
+    const thDate = document.createElement('th');
+    const thBreakfast = document.createElement('th');
+    const thLunch = document.createElement('th');
+    const thDinner = document.createElement('th');
+    const thSteps = document.createElement('th');
+    const tbody = document.createElement('tbody');
+
+    h1.innerText = 'Food & Steps logged';
+    thDate.innerText = 'Date';
+    thBreakfast.innerText = 'Breakfast';
+    thLunch.innerText = 'Lunch';
+    thDinner.innerText = 'Dinner';
+    thSteps.innerText = 'Steps';
+
+    table.classList.add('highlight');
+
+    tr.appendChild(thDate);
+    tr.appendChild(thBreakfast);
+    tr.appendChild(thLunch);
+    tr.appendChild(thDinner);
+    tr.appendChild(thSteps);
+    thead.appendChild(tr);
+    table.appendChild(thead);
+    foodStepsItems.forEach(item => tbody.appendChild(foodStepsItemsTemplate(item)))
+    table.appendChild(tbody);
+    mainDiv().appendChild(h1);
+    mainDiv().appendChild(table);
+}
