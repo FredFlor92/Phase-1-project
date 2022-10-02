@@ -37,3 +37,11 @@ const foodStepsItemsTemplate = ({date, breakfast, lunch, dinner, steps}) => {
 
     return tr;
 }
+
+// RENDERS
+
+const renderHomePage = () => {
+    mainDiv().innerHTML = '';
+    return renderLogNewEntryForm();
+}
+
