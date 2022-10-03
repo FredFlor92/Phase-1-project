@@ -1,33 +1,36 @@
 {
-    "foodlog": [
-        {
-        "date": "07/29/2022",
-        "breakfast": "eggs & bacon",
-        "lunch": "Phillycheese Steak",
-        "dinner": "Salmon and Potatoes",
+    "foodsAndSteps": [
+      {
+        "date": "03/29/2022",
+        "breakfast": "Cereal",
+        "lunch": "Salad",
+        "dinner": "Soup",
+        "steps": "4564",
         "id": 1
-        },
-        {
-        "date": "07/30/2022",
-        "breakfast": "eggs & bacon",
-        "lunch": "Phillycheese Steak",
-        "dinner": "Salmon and Potatoes",
+      },
+      {
+        "date": "12/22/2022",
+        "breakfast": "Oatmeal",
+        "lunch": "Tacos",
+        "dinner": "Hot dog",
+        "steps": "4588",
         "id": 2
-        },
-        {
-        "date": "08/01/2022",
-        "breakfast": "eggs & bacon",
-        "lunch": "Phillycheese Steak",
-        "dinner": "Salmon and Potatoes",
+      },
+      {
+        "date": "12/23/2022",
+        "breakfast": "Oatmeal",
+        "lunch": "Steak",
+        "dinner": "Pizza",
+        "steps": "4564",
         "id": 3
-        },
-        {
-        "date": "08/02/2022",
-        "breakfast": "eggs & bacon",
-        "lunch": "Phillycheese Steak",
-        "dinner": "Salmon and Potatoes",
+      },
+      {
+        "date": "",
+        "breakfast": "",
+        "lunch": "",
+        "dinner": "",
+        "steps": "",
         "id": 4
-        }
+      }
     ]
-
-}
+  }
