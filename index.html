@@ -1,52 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Food and steps logged for the day</title>
-  </head>
-
-  <body>
-    <nav class="indigo darken-3">
-      <div class="nav-wrapper container">
-        <a id="home-page-link" href="#" class="brand-logo"
-          >Logging Food & Steps</a
-        >
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <a href="#" id="logged-food-steps-link">Logged Food & Steps</a>
-          </li>
-          <li>
-            <a href="#" id="new-entry-form-link">LOG New Entry</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="container">
-      <div id="main"></div>
-    </div>
-
-    <script src="./javascripts/index.js"></script>
-  </body>
+<html lang ="en">
+    <head>
+        <script type="text/javascript" src="index.js"></script>
+        <link rel="stylesheet" href="light.css" id="lightTheme">
+        <link rel="stylesheet" href="dark.css" id="darkTheme">
+        <title>Multiversus Ironman Randomizer</title>
+    </head>
+    <body>
+        <main>
+            <h1>Multiversus Ironman Randomizer</h1>
+            <div id="character-select" class ="container">
+            </div>
+            <hr>
+            <div id="selected-character" class="container">
+            </div>
+            <div>
+                <button id="randomize">Pick Random</button>
+                <button id="reset">Reset</button>
+            </div>
+            <br>
+            <label for="theme-changer">Choose your Display Theme</label>
+            <select id="theme-dropdown" name="theme-changer">
+                <option value="dark">Dark Theme</option>
+                <option value="light">Light Theme</option>
+            </select>
+        </main>
+    </body>
 </html>

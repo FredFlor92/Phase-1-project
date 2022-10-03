@@ -26,29 +26,29 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 })
 
-function grabFighters() {
-    fetch("http://localhost:3000/fighters")
+function grabWarriors() {
+    fetch("http://localhost:3000/warriors")
     .then(response => response.json())
-    .then(data => data.forEach(fighter => showFighters(fighter)))
+    .then(data => data.forEach(warrior => showWarriors(warrior)))
 };
 
-function addFightersToArray() {
-    fetch("http://localhost:3000/fighters")
+function addWarriorsToArray() {
+    fetch("http://localhost:3000/warriorss")
     .then(response => response.json())
-    .then(data => data.forEach(fighter => fighterArray.push(fighter.name)))
+    .then(data => data.forEach(warrior => warriorArray.push(warrior.name)))
 }; 
 
-function showFighters(fighter) {
-    let fighterContainer = document.getElementById("character-select");
+function showWarriorss(warrior) {
+    let warriorContainer = document.getElementById("character-select");
     const div = document.createElement("div");
     div.classList.add("card");
     const h2 = document.createElement("h2");
-    h2.textContent = fighter.name;
-    h2.id = fighter.name;
+    h2.textContent = warrior.name;
+    h2.id = warrior.name;
     const img = document.createElement("img")
-    img.src = fighter.image;
+    img.src = warrior.image;
     div.append(h2, img);
-    fighterContainer.append(div);
+    warriorContainer.append(div);
 };
 
 const removeRandom = (array) => {
@@ -56,10 +56,10 @@ const removeRandom = (array) => {
     selectedContainer.innerHTML = ""
     if (array.length > 0) {
         const random = Math.floor(Math.random() * array.length);
-        const chosenFighter = array.splice(random, 1)[0];
+        const chosenWarrior = array.splice(random, 1)[0];
         const allCards = document.querySelectorAll('.card');
         for (const card of allCards) {
-            if (card.querySelector("h2").innerText === chosenFighter) {
+            if (card.querySelector("h2").innerText === chosenWarrior) {
                 card.remove();
                 selectedContainer.append(card);
             }
