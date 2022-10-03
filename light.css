@@ -1,0 +1,30 @@
+html {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 5px;
+    width: 125px;
+    background-color: lightgray;
+}
+
+.card {
+    text-align: center;
+    display: inline-grid;
+    margin: 3px;
+}
+
+h2 {
+    font-size: medium;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+select {
+    font-family: 'Courier New', Courier, monospace;
+}
