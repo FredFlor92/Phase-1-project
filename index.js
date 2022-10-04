@@ -1,7 +1,7 @@
 let fighterArray = []
 
 document.addEventListener("DOMContentLoaded", () => {
-    alert("RNGesus will... CHOOSE YOUR FIGHTER!!")
+    alert("CHOOSE YOUR FIGHTER!!")
     grabFighters()
     addFightersToArray()
     document.querySelector("#reset").addEventListener("click", () => {
