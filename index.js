@@ -1,14 +1,14 @@
 let fighterArray = []
-
+//Event listeners 
 document.addEventListener("DOMContentLoaded", () => {
     alert("CHOOSE YOUR FIGHTER!!")
     grabFighters()
-    addFightersToArray()
+    //addFightersToArray()
     document.querySelector("#reset").addEventListener("click", () => {
         document.getElementById("character-select").innerHTML = "";
-        fighterArray.length = 0
+        //fighterArray.length = 0
         grabFighters()
-        addFightersToArray()
+        //addFightersToArray()
         document.getElementById("selected-character").innerHTML = ""
     })
     
@@ -21,24 +21,28 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector("link[href='light.css']").href = "dark.css";
         }
         else {
+            
             document.querySelector("link[href='dark.css']").href = "light.css"
         }
         }
     )
     }    
 );
-
+//Fetch Requests
 function grabFighters() {
     fetch("http://localhost:3000/fighters")
     .then(response => response.json())
-    .then(data => data.forEach(fighter => showFighters(fighter)))
+    .then(data => {
+        fighterArray = data
+        data.forEach(fighter => showFighters(fighter))})
+    
 };
 
-function addFightersToArray() {
-    fetch("http://localhost:3000/fighters")
-    .then(response => response.json())
-    .then(data => data.forEach(fighter => fighterArray.push(fighter.name)))
-}; 
+// function addFightersToArray() {
+//     fetch("http://localhost:3000/fighters")
+//     .then(response => response.json())
+//     .then(data => data.forEach(fighter => fighterArray.push(fighter.name)))
+// }; 
 
 function showFighters(fighter) {
     let fighterContainer = document.getElementById("character-select");
@@ -59,15 +63,16 @@ const removeRandom = (array) => {
     if (array.length > 0) {
         const random = Math.floor(Math.random() * array.length);
         const chosenFighter = array.splice(random, 1)[0];
+    
         const allCards = document.querySelectorAll('.card');
         for (const card of allCards) {
-            if (card.querySelector("h2").innerText === chosenFighter) {
+            if (card.querySelector("h2").innerText === chosenFighter.name) {
                 card.remove();
                 selectedContainer.append(card);
             }
         }
     }
     else {
-        alert("Congratulations!  You did it!")
+        alert("Congratulations!  Time to reset!")
     }
 }
